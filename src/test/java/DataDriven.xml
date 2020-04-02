@@ -1,0 +1,12 @@
+<suite name ="Smoke test">
+    <test name ="TitleTest" preserve-order = "false">
+        <parameter name="URL" value="https://kwidos.com/auth/register/contractor"></parameter>
+        <classes>
+            <class name = "ServiceProviderSignUp">
+                <methods>
+                    <include name="ServiceProviderRegistartionTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
