@@ -11,8 +11,8 @@ import org.testng.annotations.Test;
 public class LoginTests extends BaseTest1 {
     @Test
     public void LoginSuccessTest()  {
-       // HomePage homepage = new HomePage(driver);
-        //LoginPage loginPage = new LoginPage(driver);
+        HomePage homepage = new HomePage(getDriver());
+        LoginPage loginPage = new LoginPage(getDriver());
         homePage.openPage();
         loginPage = homePage.clickToOpenSignIn().enterEmail("europlatinum@mail.ru").enterPassword("Newjob2!").clickSubmit();
 
