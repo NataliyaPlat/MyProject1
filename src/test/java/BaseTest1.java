@@ -43,6 +43,7 @@ public class BaseTest1 {
     @BeforeMethod
     @Parameters("URL")
         public void setUp() throws MalformedURLException{
+        //implementation of parallel testing
         threadDriver= new ThreadLocal<RemoteWebDriver>();
         //ChromeOptions options = new ChromeOptions();
         //options.addArguments("ignore-certificate-errors");
