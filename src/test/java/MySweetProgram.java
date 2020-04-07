@@ -12,13 +12,13 @@ import static org.testng.Assert.assertEquals;
 public class MySweetProgram extends BaseTest1{
     @Test
     public void titleTest() {
-        driver.get("https://www.kwidos.tk/");
-        String title = driver.getTitle();
+        getDriver().get("https://www.kwidos.tk/");
+        String title = getDriver().getTitle();
         assertEquals(title, "Kwidos");
     }
     @Test
     public void ServiceProviderRegistrationTest() {
-        driver.get("https://kwidos.tk/auth/register/contractor");
+        getDriver().get("https://kwidos.tk/auth/register/contractor");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[formcontrolname='firstName']"))).sendKeys("Nataliya");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[formcontrolname='lastName']"))).sendKeys("Platonova");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[formcontrolname='businessName']"))).sendKeys("Drowa");

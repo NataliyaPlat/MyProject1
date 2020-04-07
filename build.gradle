@@ -22,21 +22,28 @@ dependencies {
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
 // https://mvnrepository.com/artifact/org.testng/testng
     testCompile group: 'org.testng', name: 'testng', version: '7.1.0'
-}
-//task testSmoke(type: Test) {
-  //  useTestNG() {
-    //    suites "src/test/resources/Smoke.xml"
-    //}
-//}
 
-//task testRegression(type: Test) {
-  //  useTestNG() {
-    //    suites "src/test/resources/Regression.xml"
-    //}
-//}
-test {
-    useJUnitPlatform()
+    testCompile 'io.cucumber:gherkin:5.1.0'
+    testCompile 'io.cucumber:cucumber-core:3.0.2'
+    testCompile 'io.cucumber:cucumber-java:3.0.2'
+    testCompile 'io.cucumber:cucumber-testng:3.0.2'
+}
+task testSmoke(type: Test) {
     useTestNG() {
-        suites "src/resources/testNG.xml"
+        suites "src/test/resources/Regression.xml"
+    }
+}
+
+task testRegression(type: Test) {
+    useTestNG() {
+        suites "src/test/resources/Regression.xml"
+    }
+//}
+    test {
+        useJUnitPlatform()
+        useTestNG() {
+            suites "src/test/resources/TestNG.xml"
+            systemProperty "browser", System.getProperty("browser")
+        }
     }
 }
