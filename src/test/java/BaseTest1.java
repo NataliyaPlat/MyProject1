@@ -50,6 +50,9 @@ public class BaseTest1 {
         // options.addArguments("headless");
        // driver = new ChromeDriver(options);
        // driver = new RemoteWebDriver(new URL("https://10.0.0.106:4455/wd/hub"), options);
+
+        //Running tests on different browsers
+        
         SafariOptions safariOptions = new SafariOptions();
         ChromeOptions chromeOptions = new ChromeOptions();
         FirefoxOptions firefoxOptions = new FirefoxOptions();
@@ -80,6 +83,7 @@ public class BaseTest1 {
         loginPage = new LoginPage(getDriver());
     }
     public WebDriver getDriver(){
+
         return threadDriver.get();
     }
     @AfterMethod
