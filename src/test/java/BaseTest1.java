@@ -52,7 +52,7 @@ public class BaseTest1 {
        // driver = new RemoteWebDriver(new URL("https://10.0.0.106:4455/wd/hub"), options);
 
         //Running tests on different browsers
-        
+
         SafariOptions safariOptions = new SafariOptions();
         ChromeOptions chromeOptions = new ChromeOptions();
         FirefoxOptions firefoxOptions = new FirefoxOptions();
@@ -73,7 +73,7 @@ public class BaseTest1 {
                 chromeOptions.addArguments("ignore-certificate-errors");
                 capabilities=chromeOptions;
         }
-
+        //running tests in parallel in 5 threads
         threadDriver.set(new RemoteWebDriver(new URL("https://10.0.0.106:4455/wd/hub"),capabilities));
         getDriver().manage().window().maximize();
         //driver.get(url);
