@@ -34,8 +34,7 @@ public class LoginStepDefinitions {
         loginPage.openPage();
     }
 
-    //I add "azat@testpro.io" email to the emial field
-
+    // refactoring framework using Cucumber, features files in features package where i used Gherkin language
     @When("I add {string} email to the emial field")
     public void open_add_email(String email) {
 //        driver.findElement(By.cssSelector("#email")).sendKeys(email);

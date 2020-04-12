@@ -1,3 +1,4 @@
+# feature file where Cucumber tests/scenarios are written in Gherking language
 Feature: Login features
 
   Background:
