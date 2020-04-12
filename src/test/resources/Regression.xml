@@ -1,0 +1,7 @@
+<suite name ="testRegression" parallel="methods" thread-count="5">
+    <test name ="testRegression" preserve-order = "false">
+        <classes>
+            <class name="CucumberRunner"/>
+        </classes>
+    </test>
+</suite>
