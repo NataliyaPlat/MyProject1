@@ -7,7 +7,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 @CucumberOptions(
-        features = {"src/test/resources/features"})
+        features = {"src/test/resources/features"},
+        tags = {"@Regression"}  )
 public class CucumberRunner {
     private TestNGCucumberRunner testNGCucumberRunner;
     @BeforeClass(alwaysRun = true)
