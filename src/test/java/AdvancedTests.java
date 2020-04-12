@@ -8,24 +8,24 @@ import org.testng.annotations.Test;
 public class AdvancedTests extends BaseTest1{
     @Test
     public void  multipleTabs(){
-        driver.get("https://kwidos.tk/share");
-        String mainWindow = driver.getWindowHandle();
-        driver.findElement(By.xpath("//*[contains(text(), 'Twitter')]")).click();
-        driver.switchTo().window(mainWindow);
+        getDriver().get("https://kwidos.tk/share");
+        String mainWindow = getDriver().getWindowHandle();
+        getDriver().findElement(By.xpath("//*[contains(text(), 'Twitter')]")).click();
+        getDriver().switchTo().window(mainWindow);
     }
     @Test
     public void scrolling(){
-        driver.get("https://kwidos.tk/contractor/search");
-        WebElement job = driver. findElement(By.xpath("//*[contains(text(), 'NEU')]"));
-        JavascriptExecutor js = (JavascriptExecutor) driver;
+        getDriver().get("https://kwidos.tk/contractor/search");
+        WebElement job = getDriver(). findElement(By.xpath("//*[contains(text(), 'NEU')]"));
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
         js.executeScript("arguments[0].scrollIntoView()", job);
     }
     @Test
     public void keyTest(){
-        driver.get("https://kwidos.com/auth/login");
-        Actions builder = new Actions(driver);
+        getDriver().get("https://kwidos.com/auth/login");
+        Actions builder = new Actions(getDriver());
 
-        WebElement element = driver.findElement(By.cssSelector("#email"));
+        WebElement element = getDriver().findElement(By.cssSelector("#email"));
         Action seriesOfActions = builder
                 .moveToElement(element)
                 .click()
@@ -37,18 +37,19 @@ public class AdvancedTests extends BaseTest1{
     }
     @Test
     public void hover(){
-        driver.get("https://chercher.tech/practice-pop-ups-selenium-webdriver");
-        Actions builder = new Actions(driver);
+        getDriver().get("https://chercher.tech/practice-pop-ups-selenium-webdriver");
+        Actions builder = new Actions(getDriver());
 
-        WebElement element = driver.findElement(By.cssSelector("#sub-menu"));
+        WebElement element = getDriver().findElement(By.cssSelector("#sub-menu"));
         Action mouseOverHome = builder.moveToElement(element).build();
         mouseOverHome.perform();
-        driver.findElement(By.cssSelector("#link2")).click();
+        getDriver().findElement(By.cssSelector("#link2")).click();
     }
     @Test
     public void frame(){
-        driver.get("https://testpro.io");
-        driver.switchTo().frame(0).findElement(By.cssSelector("#mapDiv"));
+        getDriver().get("https://testpro.io");
+        getDriver().switchTo().frame(0).findElement(By.cssSelector("#mapDiv"));
     }
 }
+
 
