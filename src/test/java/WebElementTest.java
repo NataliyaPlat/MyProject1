@@ -11,7 +11,7 @@ public class WebElementTest extends BaseTest1 {
     //dropdown menu
     @Test
     public void dropDownExample() {
-        driver.get("http://demo.guru99.com/test/newtours/register.phh");
+        getDriver().get("http://demo.guru99.com/test/newtours/register.phh");
         Select dropdown = new Select(wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[name='country']"))));
         //dropdown.selectByVisibleText("ARGENTINA");
         //dropdown.deselectAll();
@@ -30,7 +30,7 @@ public class WebElementTest extends BaseTest1 {
     @Test
     public void checkBoxExample()
     {
-        driver.get("http://demo.guru99.com/test/radio.html");
+        getDriver().get("http://demo.guru99.com/test/radio.html");
         WebElement checkbox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("vfb-6-1")));
         //driver.findElement(By.cssSelector("#vfb-6-1"));
         //driver.findElement(By.xpath("//*[@id='vfb-6-1']"));
@@ -39,9 +39,9 @@ public class WebElementTest extends BaseTest1 {
     }
     @Test
     public void alertExample() {
-        driver.get("http://demo.guru99.com/test/delete_customer.php");
+        getDriver().get("http://demo.guru99.com/test/delete_customer.php");
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("[name='submit']"))).click();
         //driver.switchTo().alert().dismiss();
-        System.out.println(driver.switchTo().alert().getText());
+        System.out.println(getDriver().switchTo().alert().getText());
     }
 }
